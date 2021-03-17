@@ -1,3 +1,4 @@
+// Really clean DB code!
 // mongodb database wrapper
 const mongo = require('mongodb');
 const client = mongo.MongoClient;
@@ -8,6 +9,9 @@ exports.getObjectId = function (id) {
   return new mongo.ObjectId(id);
 };
 
+/*
+Select all Stories
+*/
 exports.selectAll = function (collection, callback) {
   client.connect(
     mongoUrl,
@@ -30,6 +34,10 @@ exports.selectAll = function (collection, callback) {
   );
 };
 
+
+/*
+Select a Story
+*/
 exports.select = function (collection, filter = {}, callback) {
   client.connect(
     mongoUrl,
@@ -52,6 +60,9 @@ exports.select = function (collection, filter = {}, callback) {
   );
 };
 
+/*
+Insert a Story
+*/
 exports.insert = function (collection, obj, callback) {
   client.connect(
     mongoUrl,
@@ -68,6 +79,9 @@ exports.insert = function (collection, obj, callback) {
   );
 };
 
+/*
+Update a Story
+*/
 exports.update = function (collection, filter, updateDoc, options, callback) {
   client.connect(
     mongoUrl,
