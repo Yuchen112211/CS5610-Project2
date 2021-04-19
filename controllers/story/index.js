@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+// I like you separated different controllers by functionality into different folders. 
 
 const db = require('../../db');
 const path = require('path');
